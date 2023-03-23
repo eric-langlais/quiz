@@ -123,5 +123,3 @@ d = quest['difficulte']
 # lancement du programme
 
 Questionnaire(c, t, q, d).lancer()
-
-
