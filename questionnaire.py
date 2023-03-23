@@ -101,9 +101,17 @@ class Questionnaire:
 
 file_to_open = sys.argv
 
-f = open(file_to_open[1])
-quest = json.load(f)
-f.close()
+if len(file_to_open) < 2:
+    print("Erreur: Vous devez specifier le nom du fichier jason a charger")
+    exit(0)
+
+try:
+    f = open(file_to_open[1])
+    quest = json.load(f)
+    f.close()
+except:
+    print("Erreur: impossible d'ouvrir le fichier.")
+    exit(0)
 
 # décomposition du fichier JSON en différents éléments
 
