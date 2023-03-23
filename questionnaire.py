@@ -1,4 +1,6 @@
 import json
+import sys
+
 # PROJET QUESTIONNAIRE V3 : POO
 #
 # - Pratiquer sur la POO
@@ -105,7 +107,9 @@ class Questionnaire:
 
 # ouverture et lecture des donnees d'un fichier JSON
 
-f = open('animaux_leschats_debutant.json')
+file_to_open = sys.argv
+
+f = open(file_to_open[1])
 quest = json.load(f)
 f.close()
 
@@ -117,6 +121,7 @@ q = quest['questions']
 d = quest['difficulte']
 
 # lancement du programme
+
 
 Questionnaire(c, t, q, d).lancer()
 
