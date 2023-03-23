@@ -1,20 +1,12 @@
 import json
 import sys
 
-# PROJET QUESTIONNAIRE V3 : POO
-#
-# - Pratiquer sur la POO
-# - Travailler sur du code existant
-# - Mener un raisonnement
-#
-# -> Définir les entitées (données, actions)
-
-# quiz = {"categorie":"Animaux",
-#         "titre":"Les chats",
-#         "questions":
-#           [{"titre":"question",
-#             "choix": [["choix1", boolean],["choix2", boolean],["choix3", boolean]]}],
-#         "difficulte":"debutant"}
+# Questionnaire = {"categorie":"Animaux",
+#               "titre":"Les chats",
+#               "questions":
+#                       [{"titre":"question",
+#                         "choix": [["choix1", boolean],["choix2", boolean],["choix3", boolean]]}],
+#                "difficulte":"debutant"}
 #
 # Question  (dictionnaire)
 #    - titre       - str
@@ -105,7 +97,7 @@ class Questionnaire:
 
         return score
 
-# ouverture et lecture des donnees d'un fichier JSON
+# ouverture et lecture des données d'un fichier JSON
 
 file_to_open = sys.argv
 
@@ -113,7 +105,7 @@ f = open(file_to_open[1])
 quest = json.load(f)
 f.close()
 
-# decomposition du fichier JSON en differents elements
+# décomposition du fichier JSON en différents éléments
 
 c = quest['categorie']
 t = quest['titre']
@@ -121,7 +113,6 @@ q = quest['questions']
 d = quest['difficulte']
 
 # lancement du programme
-
 
 Questionnaire(c, t, q, d).lancer()
 
