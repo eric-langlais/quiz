@@ -97,29 +97,31 @@ class Questionnaire:
 
         return score
 
-# ouverture et lecture des données d'un fichier JSON
+if __name__ == '__main__':
 
-file_to_open = sys.argv
+    # ouverture et lecture des données d'un fichier JSON
 
-if len(file_to_open) < 2:
-    print("Erreur: Vous devez specifier le nom du fichier jason a charger")
-    exit(0)
+    file_to_open = sys.argv
 
-try:
-    f = open(file_to_open[1])
-    quest = json.load(f)
-    f.close()
-except:
-    print("Erreur: impossible d'ouvrir le fichier.")
-    exit(0)
+    if len(file_to_open) < 2:
+        print("Erreur: Vous devez specifier le nom du fichier jason a charger")
+        exit(0)
 
-# décomposition du fichier JSON en différents éléments
+    try:
+        f = open(file_to_open[1])
+        quest = json.load(f)
+        f.close()
+    except:
+        print("Erreur: impossible d'ouvrir le fichier.")
+        exit(0)
 
-c = quest['categorie']
-t = quest['titre']
-q = quest['questions']
-d = quest['difficulte']
+    # décomposition du fichier JSON en différents éléments
 
-# lancement du programme
+    c = quest['categorie']
+    t = quest['titre']
+    q = quest['questions']
+    d = quest['difficulte']
 
-Questionnaire(c, t, q, d).lancer()
+    # lancement du programme
+
+    Questionnaire(c, t, q, d).lancer()
